@@ -1,69 +1,69 @@
 {
-    "name": "laravie/query-filter",
-    "description": "Database/Eloquent Query Builder filters for Laravel",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Mior Muhammad Zaki",
-            "email": "crynobone@gmail.com"
-        }
+  "name": "laravie/query-filter",
+  "description": "Database/Eloquent Query Builder filters for Laravel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mior Muhammad Zaki",
+      "email": "crynobone@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Laravie\\QueryFilter\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Laravie\\QueryFilter\\Tests\\": "tests/",
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
+  "require": {
+    "php": "^8.0|^8.1",
+    "illuminate/database": "^9.0 || ^10.17 || ^11.0",
+    "illuminate/support": "^9.0 || ^10.17 || ^11.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.6",
+    "nunomaduro/larastan": "^2.6",
+    "orchestra/testbench": "^8.15 || ^9.0",
+    "phpunit/phpunit": "^10.1 || ^11.0"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
     ],
-    "autoload": {
-        "psr-4": {
-            "Laravie\\QueryFilter\\": "src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Laravie\\QueryFilter\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
-        }
-    },
-    "require": {
-        "php": "^8.1",
-        "illuminate/database": "^10.17 || ^11.0",
-        "illuminate/support": "^10.17 || ^11.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.6",
-        "nunomaduro/larastan": "^2.6",
-        "orchestra/testbench": "^8.15 || ^9.0",
-        "phpunit/phpunit": "^10.1 || ^11.0"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "@clear",
-            "@prepare"
-        ],
-        "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "lint": [
-            "@php vendor/bin/pint",
-            "@php vendor/bin/phpstan analyse"
-        ],
-        "ci": [
-            "@prepare",
-            "@lint",
-            "@test"
-        ],
-        "test": [
-            "@php vendor/bin/phpunit -c ./ --color"
-        ],
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
-        "build": "@php vendor/bin/testbench workbench:build --ansi",
-        "serve": [
-            "@build",
-            "@php vendor/bin/testbench serve"
-        ]
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "lint": [
+      "@php vendor/bin/pint",
+      "@php vendor/bin/phpstan analyse"
+    ],
+    "ci": [
+      "@prepare",
+      "@lint",
+      "@test"
+    ],
+    "test": [
+      "@php vendor/bin/phpunit -c ./ --color"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "@build",
+      "@php vendor/bin/testbench serve"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
 }
